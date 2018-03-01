@@ -1,5 +1,7 @@
 {
   "name": "melbourne-tourer",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jshint": "^2.9.5"
+  }
 }
