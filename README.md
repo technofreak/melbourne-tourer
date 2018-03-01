@@ -1,6 +1,6 @@
 # README
 
-Melbourne Tourer is created with an idea to be a place where you bookmark and catalogue places you want to visit in Melbourne.
+Melbourne Tourer is created with an idea to be a web app where you could bookmark and categorize places you want to visit in Melbourne.
 
 Basic features include,
 * Ability to add/edit a place - name, category, address, phone number, plus code, operating hours, best timing to visit, notes, cost per visit (per person, per family of 4), photo(s), host website for more information, best way to reach the place using PTV
@@ -10,18 +10,30 @@ Basic features include,
 * Ability to delete a place to trash and retrieve it back
 * Favourites list (across categories)
 
-Place
+**Place**
+
 attributes: name:string(50), address:text, phone number:string(20), website:string(200), favourite:boolean, archived:boolean, deleted:boolen, visited:boolen
+
 has_one: category (name, description)
+
 has_one: plus_code (code:string(20), long:string(20), lat:string(20))
+
 has_many: operating_hours (day:string(20), start_time:time, end_time:time)
+
 has_many: best_visit_timings (day:string(20), start_time:time, end_time:time)
+
 has_many: notes (message:text)
+
 has_one: cost_per_person (amount:float)
+
 has_one: cost_per_family (amount:float, family_saver:boolean)
+
 has_many: photos (name:string(50), format:string(10), image:binary:limit(2.megabytes))
+
 has_many: how_to_reach_ptv (description:text)
+
 has_one: archive_note (message:text)
+
 ---
 
 This README would normally document whatever steps are necessary to get the
