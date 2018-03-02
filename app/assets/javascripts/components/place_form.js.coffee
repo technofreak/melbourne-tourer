@@ -8,7 +8,7 @@
 		'website': ''
 
 	valid: ->
-		@state.name
+		@state.name && @state.address
 	
 	handleChange: (e) ->
 		name = e.target.name
