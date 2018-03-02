@@ -1,0 +1,2 @@
+class PlusCode < ApplicationRecord
+end

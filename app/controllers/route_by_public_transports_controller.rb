@@ -1,0 +1,2 @@
+class RouteByPublicTransportsController < ApplicationController
+end

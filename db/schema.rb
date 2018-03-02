@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301003024) do
+ActiveRecord::Schema.define(version: 20180302082555) do
+
+  create_table "best_visiting_times", force: :cascade do |t|
+    t.string "day", limit: 20
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_best_visiting_times_on_place_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", limit: 50
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "message"
+    t.boolean "visible"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_notes_on_place_id"
+  end
+
+  create_table "operating_hours", force: :cascade do |t|
+    t.string "day", limit: 20
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_operating_hours_on_place_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name", limit: 50
@@ -21,8 +57,28 @@ ActiveRecord::Schema.define(version: 20180301003024) do
     t.boolean "archived"
     t.boolean "deleted"
     t.boolean "visited"
+    t.integer "category_id"
+    t.integer "plus_code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_places_on_category_id", unique: true
+    t.index ["plus_code_id"], name: "index_places_on_plus_code_id", unique: true
+  end
+
+  create_table "plus_codes", force: :cascade do |t|
+    t.string "code", limit: 20
+    t.string "lon", limit: 20
+    t.string "lat", limit: 20
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "route_by_public_transports", force: :cascade do |t|
+    t.text "description"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_route_by_public_transports_on_place_id"
   end
 
 end

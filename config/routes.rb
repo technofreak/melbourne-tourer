@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :route_by_public_transports
+  resources :notes
+  resources :best_visiting_times
+  resources :operating_hours
+  resources :plus_codes
+  resources :categories
   resources :places
 
   root 'places#index'

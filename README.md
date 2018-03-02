@@ -16,7 +16,7 @@ attributes: name:string(50), address:text, phone number:string(20), website:stri
 
 has_one: category (name, description)
 
-has_one: plus_code (code:string(20), long:string(20), lat:string(20))
+has_one: plus_code (code:string(20), lon:string(20), lat:string(20))
 
 has_many: operating_hours (day:string(20), start_time:time, end_time:time)
 

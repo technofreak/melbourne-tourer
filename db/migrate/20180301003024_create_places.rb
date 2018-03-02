@@ -9,6 +9,8 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.boolean :archived
       t.boolean :deleted
       t.boolean :visited
+      t.belongs_to :category, index: {unique: true}, foreign_key: true
+      t.belongs_to :plus_code, index: {unique: true}, foreign_key: true
 
       t.timestamps
     end

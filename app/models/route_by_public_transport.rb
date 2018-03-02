@@ -1,0 +1,2 @@
+class RouteByPublicTransport < ApplicationRecord
+end
