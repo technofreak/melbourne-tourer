@@ -20,14 +20,20 @@
 				'Places'
 			React.createElement PlaceForm, handleNewPlace: @addPlace
 			React.DOM.hr null
-			React.DOM.table
-				className: 'table table-bordered'
-				React.DOM.thead null,
-				React.DOM.tr null,
-					React.DOM.th null, 'Place'
-					React.DOM.th null, 'Address'
-					React.DOM.th null, 'Phone Number'
-					React.DOM.th null, 'Website'
-				React.DOM.tbody null,
+			# React.DOM.table
+			# 	className: 'table table-bordered'
+			# 	React.DOM.thead null,
+			# 	React.DOM.tr null,
+			# 		React.DOM.th null, 'Place'
+			# 		React.DOM.th null, 'Address'
+			# 		React.DOM.th null, 'Phone Number'
+			# 		React.DOM.th null, 'Website'
+			# 	React.DOM.tbody null,
+			# 		for place in @state.places
+			# 			React.createElement Place, key: place.id, place: place
+			React.DOM.div
+				className: 'container-fluid'
+				React.DOM.div
+					className: 'row'
 					for place in @state.places
 						React.createElement Place, key: place.id, place: place
