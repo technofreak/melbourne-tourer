@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302082555) do
+ActiveRecord::Schema.define(version: 20180304004540) do
 
   create_table "best_visiting_times", force: :cascade do |t|
     t.string "day", limit: 20
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180302082555) do
     t.string "lat", limit: 20
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "place_id"
+    t.index ["place_id"], name: "index_plus_codes_on_place_id"
   end
 
   create_table "route_by_public_transports", force: :cascade do |t|

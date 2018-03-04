@@ -14,7 +14,7 @@ Basic features include,
 
 attributes: name:string(50), address:text, phone number:string(20), website:string(200), favourite:boolean, archived:boolean, deleted:boolen, visited:boolen
 
-has_one: category (name, description)
+belongs_to: category (name, description)
 
 has_one: plus_code (code:string(20), lon:string(20), lat:string(20))
 
