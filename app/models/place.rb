@@ -14,4 +14,7 @@ class Place < ApplicationRecord
       super
     end
   end
+
+  def respond_to_missing?(meth, include_private = false)
+    Category.all.include?(meth) || super
 end
